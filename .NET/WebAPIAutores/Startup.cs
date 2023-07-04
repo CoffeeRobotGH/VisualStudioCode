@@ -22,7 +22,6 @@ using System.Text.Json.Serialization;
 using System.Threading;
 using WebAPIAutores;
 using WebAPIAutores.Controllers;
-using WebAPIAutores.Servicios;
 using WebAPIAutores.Middlewares;
 using WebAPIAutores.Filtros;
 
@@ -48,17 +47,6 @@ namespace WebApiAutores
             services.AddDbContext<ApplicationDbContext>(options => 
                 options.UseSqlServer(Configuration.GetConnectionString("defaultConnection")));
 
-            services.AddTransient<IServicio, ServicioA>();
-
-            services.AddTransient<ServicioTransient>();
-            services.AddScoped<ServicioScoped>();
-            services.AddSingleton<ServicioSingleton>();
-            
-            services.AddTransient<MiFiltroDeAccion>();
-            services.AddHostedService<EscribirEnArchivo>();
-
-            services.AddResponseCaching();
-
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 
             //services.AddScoped<ServicioA>();
@@ -77,13 +65,6 @@ namespace WebApiAutores
             //app.UseMiddleware<LoguearRespuestaHTTPMiddleware>();
             app.UseLoguearRespuestaHTTP();
 
-            app.Map("/ruta1", app => 
-            {
-                app.Run(async contexto => 
-                {
-                    await contexto.Response.WriteAsync("Estoy interceptando la tubería");
-                });
-            });
 
             if (env.IsDevelopment())
             {
@@ -95,8 +76,6 @@ namespace WebApiAutores
             app.UseHttpsRedirection();
 
             app.UseRouting();
-
-            app.UseResponseCaching();
             
             app.UseAuthorization();
 
