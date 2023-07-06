@@ -20,7 +20,8 @@ namespace WebAPIAutores.Controllers
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
 
-        public LibrosController(ApplicationDbContext context, IMapper mapper)
+        public LibrosController(ApplicationDbContext context, 
+            IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
@@ -29,7 +30,8 @@ namespace WebAPIAutores.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<LibroDTO>> Get(int id)
         {
-            var libro = await context.Libros.FirstOrDefaultAsync(x => x.Id == id);
+            var libro = await context.Libros
+                .Include(libroDB => libroDB.Comentarios).FirstOrDefaultAsync(x => x.Id == id);
             return mapper.Map<LibroDTO>(libro);
         }
 

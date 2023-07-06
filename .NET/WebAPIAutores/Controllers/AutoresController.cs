@@ -25,7 +25,8 @@ namespace WebAPIAutores.Controllers
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
 
-        public AutoresController(ApplicationDbContext context, IMapper mapper)
+        public AutoresController(ApplicationDbContext context, 
+            IMapper mapper)
         {
             this.context = context;
             this.mapper = mapper;
