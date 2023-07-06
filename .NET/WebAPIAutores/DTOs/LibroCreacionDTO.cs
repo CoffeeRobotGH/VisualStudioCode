@@ -1,15 +1,14 @@
 using System;
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using WebAPIAutores.Validaciones;
 
-namespace WebAPIAutores.Entidades
+namespace WebAPIAutores.DTOs
 {
-    public class Libro
+    public class LibroCreacionDTO
     {
-        public int Id { get; set; }
         [PrimeraLetraMayuscula]
         [StringLength(maximumLength: 250)]
         public string Titulo { get; set; }
