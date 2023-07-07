@@ -16,5 +16,6 @@ namespace WebAPIAutores.Entidades
         [PrimeraLetraMayuscula]
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+        public List<AutorLibro> AutoresLibros { get; set; }
     }    
 }

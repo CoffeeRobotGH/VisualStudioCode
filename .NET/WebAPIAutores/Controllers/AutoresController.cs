@@ -42,7 +42,10 @@ namespace WebAPIAutores.Controllers
         [HttpGet("{id:int}")]
         public async Task<ActionResult<AutorDTO>> Get (int id)
         {
-            var autor = await context.Autores.FirstOrDefaultAsync(autorDB => autorDB.Id == id);
+            var autor = await context.Autores
+                .Include(autorDB => autorDB.AutoresLibros)
+                .ThenInclude(autorLibroDB => autorLibroDB.Libro)
+                .FirstOrDefaultAsync(autorDB => autorDB.Id == id);
 
             if (autor == null)
             {
