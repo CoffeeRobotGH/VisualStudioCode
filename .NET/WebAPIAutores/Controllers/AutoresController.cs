@@ -40,7 +40,7 @@ namespace WebAPIAutores.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<ActionResult<AutorDTO>> Get (int id)
+        public async Task<ActionResult<AutorDTOConLibros>> Get (int id)
         {
             var autor = await context.Autores
                 .Include(autorDB => autorDB.AutoresLibros)
@@ -52,7 +52,7 @@ namespace WebAPIAutores.Controllers
                 return NotFound();
             }
 
-            return mapper.Map<AutorDTO>(autor);
+            return mapper.Map<AutorDTOConLibros>(autor);
         }
 
         [HttpGet("{nombre}")]
