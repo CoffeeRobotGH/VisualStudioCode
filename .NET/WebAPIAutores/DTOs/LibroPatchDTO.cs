@@ -7,13 +7,12 @@ using WebAPIAutores.Validaciones;
 
 namespace WebAPIAutores.DTOs
 {
-    public class LibroCreacionDTO
+    public class LibroPatchDTO
     {
         [PrimeraLetraMayuscula]
         [StringLength(maximumLength: 250)]
         [Required]
         public string Titulo { get; set; }
         public DateTime FechaPublicaicon { get; set; }
-        public List<int> AutoresIds { get; set; }
     }
 }
