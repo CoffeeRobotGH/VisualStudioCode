@@ -74,27 +74,7 @@ namespace WebAPIAutores.Controllers
 
             return CreatedAtRoute("obtenerLibro", new { id = libro.Id }, libroDTO);
         }
-
-        [HttpPut("{id:int}")] // api/Libros/1
-        public async Task<ActionResult> Put(Libro libro, int id)
-        {
-            if (libro.Id != id)
-            {
-                return BadRequest("El id del libro no coincide con el id de la URL");
-            }
-
-            var existe = await context.Libros.AnyAsync(x => x.Id == id);
-
-            if (!existe)
-            {
-                return NotFound();
-            }
-
-            context.Update(libro);
-            await context.SaveChangesAsync();
-            return Ok();
-        }
-
+        
         [HttpPut("{id:int}")]
         public async Task<ActionResult> Put(int id, LibroCreacionDTO libroCreacionDTO)
         {
