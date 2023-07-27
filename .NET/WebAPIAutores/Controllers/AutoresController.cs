@@ -15,24 +15,30 @@ using Microsoft.AspNetCore.Authorization;
 using WebAPIAutores.Filtros;
 using WebAPIAutores.DTOs;
 using WebAPIAutores.Utilidades;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebAPIAutores.Controllers
 {
     [ApiController]
     [Route("api/autores")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class AutoresController: ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
+        private readonly IConfiguration configuration;
 
         public AutoresController(ApplicationDbContext context, 
-            IMapper mapper)
+            IMapper mapper,
+                IConfiguration configuration)
         {
             this.context = context;
             this.mapper = mapper;
+            this.configuration = configuration;
         }
-
+        
         [HttpGet] // api/autores
+        [AllowAnonymous]
         public async Task<List<AutorDTO>> Get()
         {
             var autores = await context.Autores.ToListAsync();
