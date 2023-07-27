@@ -105,13 +105,15 @@ namespace WebApiAutores
                 opciones.AddPolicy("EsAdmin", politica => politica.RequireClaim("esAdmin"));
             });
 
-            services.AddCors(opciones => 
-            {
-                opciones.AddDefaultPolicy(builder =>
-                {
-                    builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader();
-                });
-            });
+            // services.AddCors(opciones => 
+            // {
+            //     opciones.AddDefaultPolicy(builder =>
+            //     {
+            //         builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader();
+            //     });
+            // });
+
+            services.AddDataProtection();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
