@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPIAutores.DTOs;
@@ -12,16 +15,20 @@ namespace WebAPIAutores.Controllers
 {
     [ApiController]
     [Route("api/libros/{libroId:int}/{comentarios}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ComentariosController: ControllerBase
     {
         private readonly ApplicationDbContext context;
         private readonly IMapper mapper;
+        private readonly UserManager<IdentityUser> userManager;
 
         public ComentariosController(ApplicationDbContext context,
-            IMapper mapper)
+            IMapper mapper,
+                UserManager<IdentityUser> userManager)
         {
             this.context = context;
             this.mapper = mapper;
+            this.userManager = userManager;
         }
 
         [HttpGet]
@@ -55,8 +62,13 @@ namespace WebAPIAutores.Controllers
         }        
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<ActionResult> Post(int libroId, ComentarioCreacionDTO comentarioCreacionDTO)
         {
+            var emailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var email = emailClaim.Value;
+            var usuario = await userManager.FindByEmailAsync(email);
+            var usuarioId = usuario.Id;
             var existeLibro= await context.Libros.AnyAsync(libroDB => libroDB.Id == libroId);
 
             if(!existeLibro)
@@ -66,6 +78,7 @@ namespace WebAPIAutores.Controllers
 
             var comentario = mapper.Map<Comentario>(comentarioCreacionDTO);
             comentario.LibroID = libroId;
+            comentario.UsuarioId = usuarioId;
             context.Add(comentario);
             await context.SaveChangesAsync();
 

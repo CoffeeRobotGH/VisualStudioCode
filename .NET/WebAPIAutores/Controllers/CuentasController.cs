@@ -1,3 +1,4 @@
+using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -9,6 +10,8 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using WebAPIAutores.DTOs;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace WebAPIAutores.Controllers
 {
@@ -60,6 +63,20 @@ namespace WebAPIAutores.Controllers
             {
                 return BadRequest("Login incorrecto");
             }
+        }
+
+        [HttpGet("RenovarToken")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult<RespuestaAutenticacion> Renovar()
+        {
+            var emailClaim = HttpContext.User.Claims.Where(claim => claim.Type == "email").FirstOrDefault();
+            var email = emailClaim.Value;
+            var credencialesUsuario = new CredencialesUsuario()
+            {
+                Email = email
+            };
+
+            return ConstruirToken(credencialesUsuario);
         }
 
         private RespuestaAutenticacion ConstruirToken(CredencialesUsuario credencialesUsuario)
