@@ -30,6 +30,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using WebAPIAutores.Servicios;
 
 namespace WebApiAutores
 {
@@ -114,6 +115,7 @@ namespace WebApiAutores
             // });
 
             services.AddDataProtection();
+            services.AddTransient<HashService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)

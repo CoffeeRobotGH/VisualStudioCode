@@ -13,6 +13,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection;
+using WebAPIAutores.Servicios;
 
 namespace WebAPIAutores.Controllers
 {
@@ -23,26 +24,39 @@ namespace WebAPIAutores.Controllers
         private readonly UserManager<IdentityUser> userManager;
         private readonly IConfiguration configuration;
         private readonly SignInManager<IdentityUser> signInManager;
+        private readonly HashService hashService;
         private readonly IDataProtector dataProtector;
 
         public CuentasController(UserManager<IdentityUser> userManager,
             IConfiguration configuration,
                 SignInManager<IdentityUser> signInManager,
-                    IDataProtectionProvider dataProtectionProvider)
+                    IDataProtectionProvider dataProtectionProvider,
+                        HashService hashService)
         {
             this.userManager = userManager;
             this.configuration = configuration;
             this.signInManager = signInManager;
+            this.hashService = hashService;
             dataProtector = dataProtectionProvider.CreateProtector("valor_unico_y_quizas_secreto");
         }
 
-        [HttpGet("encriptarPorTiempo")]
-        public ActionResult EncriptarPorTiempo()
+        [HttpGet("{textoPlano}")]
+        public ActionResult RealizarHash(string textoPlano)
         {
-            var protectorLimitadoPorTiempo = dataProtector.ToTimeLimitedDataProtector();
+            var resultado1 = hashService.Hash(textoPlano);
+            var resultado2 = hashService.Hash(textoPlano);
+            return Ok(new {
+                textoPlano = textoPlano,
+                Hash1 = resultado1,
+                Hash2 = resultado2
+            });
+        }
 
+        [HttpGet("encriptar")]
+        public ActionResult Encriptar()
+        {
             var textoPlano = "Emanuel Paredes";
-            var textoCifrado = protectorLimitadoPorTiempo.Protect(textoPlano, lifetime: TimeSpan.FromSeconds(5));
+            var textoCifrado = dataProtector.Protect(textoPlano);
             var textoDesencriptado = dataProtector.Unprotect(textoCifrado);
 
             return Ok(new
