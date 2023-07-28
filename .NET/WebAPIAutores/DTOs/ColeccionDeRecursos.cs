@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebAPIAutores.DTOs
 {
-    public class AutorDTO: Recurso
+    public class ColeccionDeRecursos<T>: Recurso where T: Recurso
     {
-        public int Id { get; set; }
-        public string Nombre { get; set; }
+        public List<T> Valores { get; set; }
     }
 }
