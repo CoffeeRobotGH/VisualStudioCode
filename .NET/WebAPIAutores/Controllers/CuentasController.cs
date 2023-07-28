@@ -67,7 +67,7 @@ namespace WebAPIAutores.Controllers
             });
         }
 
-        [HttpPost("registrar")] // api/cuentas/registrar
+        [HttpPost("registrar", Name = "registrarUsuario")] // api/cuentas/registrar
         public async Task<ActionResult<RespuestaAutenticacion>> Registrar(CredencialesUsuario credencialesUsuario)
         {
             var usuario = new IdentityUser { UserName = credencialesUsuario.Email,
@@ -84,7 +84,7 @@ namespace WebAPIAutores.Controllers
             }
         }
 
-        [HttpPost("login")]
+        [HttpPost("login", Name = "loginUsuario")]
         public async Task<ActionResult<RespuestaAutenticacion>> Login(CredencialesUsuario credencialesUsuario)
         {
             var resultado = await signInManager.PasswordSignInAsync(credencialesUsuario.Email,
@@ -100,7 +100,7 @@ namespace WebAPIAutores.Controllers
             }
         }
 
-        [HttpGet("RenovarToken")]
+        [HttpGet("RenovarToken", Name = "renovarToken")]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public async Task<ActionResult<RespuestaAutenticacion>> Renovar()
         {
@@ -142,7 +142,7 @@ namespace WebAPIAutores.Controllers
             };
         }
 
-        [HttpPost("HacerAdmin")]
+        [HttpPost("HacerAdmin", Name = "hacerAdmin")]
         public async Task<ActionResult> HacerAdmin(EditarAdminDTO editarAdminDTO)
         {
             var usuario = await userManager.FindByEmailAsync(editarAdminDTO.Email);
@@ -150,7 +150,7 @@ namespace WebAPIAutores.Controllers
             return NoContent();
         }
 
-        [HttpDelete("RemoverAdmin")]
+        [HttpDelete("RemoverAdmin", Name = "removerAdmin")]
         public async Task<ActionResult> RemoverAdmin(EditarAdminDTO editarAdminDTO)
         {
             var usuario = await userManager.FindByEmailAsync(editarAdminDTO.Email);
