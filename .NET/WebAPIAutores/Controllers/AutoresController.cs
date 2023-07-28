@@ -32,7 +32,7 @@ namespace WebAPIAutores.Controllers
             this.mapper = mapper;
         }
 
-        [HttpGet] // api/autores
+        [HttpGet(Name = "obetnerAutores")] // api/autores
         public async Task<List<AutorDTO>> Get()
         {
             var autores = await context.Autores.ToListAsync();
@@ -55,7 +55,7 @@ namespace WebAPIAutores.Controllers
             return mapper.Map<AutorDTOConLibros>(autor);
         }
 
-        [HttpGet("{nombre}")]
+        [HttpGet("{nombre}", Name = "obtenerAutorPorNombre")]
         public async Task<ActionResult<List<AutorDTO>>> Get ([FromRoute] string nombre)
         {
             var autores = await context.Autores.Where(autorDB => autorDB.Nombre.Contains(nombre)).ToListAsync();
@@ -63,7 +63,7 @@ namespace WebAPIAutores.Controllers
             return mapper.Map<List<AutorDTO>>(autores);
         }
 
-        [HttpPost]
+        [HttpPost(Name = "crearAutor")]
         public async Task<ActionResult> Post([FromBody] AutorCreacionDTO autorCreacionDTO)
         {
             var existeAutorConElMismoNombre = await context.Autores.AnyAsync(x => x.Nombre == autorCreacionDTO.Nombre);
@@ -83,7 +83,7 @@ namespace WebAPIAutores.Controllers
             return CreatedAtRoute("obtenerAutor", new { id = autor.Id }, autorDTO);
         }
 
-        [HttpPut("{id:int}")] // api/autores/1
+        [HttpPut("{id:int}", Name = "actualizarAutor")] // api/autores/1
         public async Task<ActionResult> Put(AutorCreacionDTO autorCreacionDTO, int id)
         {
             var existe = await context.Autores.AnyAsync(x => x.Id == id);
@@ -101,7 +101,7 @@ namespace WebAPIAutores.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id:int}")] // api/autores/2
+        [HttpDelete("{id:int}", Name = "borrarAutor")] // api/autores/2
         public async Task<ActionResult> Delete(int id)
         {
             var existe = await context.Autores.AnyAsync(x => x.Id == id);
