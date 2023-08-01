@@ -12,10 +12,10 @@ using WebAPIAutores.DTOs;
 using AutoMapper;
 using Microsoft.AspNetCore.JsonPatch;
 
-namespace WebAPIAutores.Controllers
+namespace WebAPIAutores.Controllers.V1
 {
     [ApiController]
-    [Route("api/libros")]
+    [Route("api/v1/libros")]
     public class LibrosController: ControllerBase
     {
         private readonly ApplicationDbContext context;

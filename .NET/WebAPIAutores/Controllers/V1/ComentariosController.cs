@@ -11,10 +11,10 @@ using Microsoft.EntityFrameworkCore;
 using WebAPIAutores.DTOs;
 using WebAPIAutores.Entidades;
 
-namespace WebAPIAutores.Controllers
+namespace WebAPIAutores.Controllers.V1
 {
     [ApiController]
-    [Route("api/libros/{libroId:int}/{comentarios}")]
+    [Route("api/v1/libros/{libroId:int}/{comentarios}")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class ComentariosController: ControllerBase
     {

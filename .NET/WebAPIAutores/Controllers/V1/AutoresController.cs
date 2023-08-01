@@ -18,10 +18,12 @@ using WebAPIAutores.Servicios;
 using WebAPIAutores.Utilidades;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace WebAPIAutores.Controllers
+namespace WebAPIAutores.Controllers.V1
 {
     [ApiController]
     [Route("api/autores")]
+    [CabeceraEstaPresente("x-version", "1")]
+    // [Route("api/v1/autores")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme, Policy = "EsAdmin")]
     public class AutoresController: ControllerBase
     {
