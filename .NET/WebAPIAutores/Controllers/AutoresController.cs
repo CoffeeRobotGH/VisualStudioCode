@@ -40,41 +40,17 @@ namespace WebAPIAutores.Controllers
 
         [HttpGet("obtenerAutores")] // api/autores
         [AllowAnonymous]
-        public async Task<IActionResult> Get([FromQuery] bool incluirHATEOAS = true)
+        [ServiceFilter(typeof(HATEOASAutorFilterAttribute))]
+        public async Task<ActionResult<List<AutorDTO>>> Get([FromHeader] string incluirHATEOAS)
         {
             var autores = await context.Autores.ToListAsync();
-            var dtos = mapper.Map<List<AutorDTO>>(autores);
-
-            if (incluirHATEOAS)
-            {
-                var esAdmin = await authorizationService.AuthorizeAsync(User, "esAdmin");
-                
-                // dtos.ForEach(dto => GenerarEnlaces(dto, esAdmin.Succeeded));
-
-                var resultado = new ColeccionDeRecursos<AutorDTO> { Valores = dtos };
-                resultado.Enlaces.Add(new DatoHATEOAS(
-                    enlace: Url.Link("obtenerAutores", new { }),
-                    descripcion: "self",
-                    metodo: "GET" ));
-
-                if (esAdmin.Succeeded)
-                {
-                    resultado.Enlaces.Add(new DatoHATEOAS(
-                        enlace: Url.Link("crearAutor", new { }),
-                        descripcion: "crear-autor",
-                        metodo: "POST" ));
-                }
-
-                return Ok(resultado);
-            }
-
-            return Ok(dtos);
+            return mapper.Map<List<AutorDTO>>(autores);
         }
 
         [HttpGet("{id:int}", Name = "obteneAutor")]
         [AllowAnonymous]
         [ServiceFilter(typeof(HATEOASAutorFilterAttribute))]
-        public async Task<ActionResult<AutorDTOConLibros>> Get (int id, [FromHeader] string incluirHATEOAS)
+        public async Task<ActionResult<AutorDTOConLibros>> Get(int id, [FromHeader] string incluirHATEOAS)
         {
             var autor = await context.Autores
                 .Include(autorDB => autorDB.AutoresLibros)
@@ -91,7 +67,7 @@ namespace WebAPIAutores.Controllers
         }
 
         [HttpGet("{nombre}", Name = "obtenerAutorPorNombre")]
-        public async Task<ActionResult<List<AutorDTO>>> Get ([FromRoute] string nombre)
+        public async Task<ActionResult<List<AutorDTO>>> GetPorNombre([FromRoute] string nombre)
         {
             var autores = await context.Autores.Where(autorDB => autorDB.Nombre.Contains(nombre)).ToListAsync();
 
