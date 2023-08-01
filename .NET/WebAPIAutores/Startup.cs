@@ -31,6 +31,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using WebAPIAutores.Servicios;
+using WebAPIAutores.Utilidades;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 
 namespace WebApiAutores
 {
@@ -106,16 +108,20 @@ namespace WebApiAutores
                 opciones.AddPolicy("EsAdmin", politica => politica.RequireClaim("esAdmin"));
             });
 
-            // services.AddCors(opciones => 
-            // {
-            //     opciones.AddDefaultPolicy(builder =>
-            //     {
-            //         builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader();
-            //     });
-            // });
-
             services.AddDataProtection();
             services.AddTransient<HashService>();
+
+            services.AddCors(opciones => 
+            {
+                opciones.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
+            services.AddTransient<GeneradorEnlaces>();
+            services.AddTransient<HATEOASAutorFilterAttribute>();
+            services.AddSingleton<IActionContextAccessor, ActionContextAccessor>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILogger<Startup> logger)
