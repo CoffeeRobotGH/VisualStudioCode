@@ -1,3 +1,4 @@
+using System.Net;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebAPIAutores.DTOs;
 using WebAPIAutores.Entidades;
+using WebAPIAutores.Utilidades;
 
 namespace WebAPIAutores.Controllers.V1
 {
@@ -32,7 +34,8 @@ namespace WebAPIAutores.Controllers.V1
         }
 
         [HttpGet(Name = "obtenerComentariosLibro")]
-        public async Task<ActionResult<List<ComentarioDTO>>> Get(int libroId)
+        public async Task<ActionResult<List<ComentarioDTO>>> Get(int libroId, 
+            [FromQuery] PaginacionDTO paginacionDTO)
         {
             var existeLibro= await context.Libros.AnyAsync(libroDB => libroDB.Id == libroId);
 
@@ -41,8 +44,10 @@ namespace WebAPIAutores.Controllers.V1
                 return NotFound();
             }
 
-            var comentarios = await context.Comentarios
-                .Where(comentariosDB => comentariosDB.LibroID == libroId).ToListAsync();
+            var queryable = context.Comentarios.Where(comentariosDB => comentariosDB.LibroID == libroId).AsQueryable();
+            await HttpContext.InsertarParametrosPaginacionEnCabecera(queryable);
+            var comentarios = await queryable.OrderBy(comentario => comentario.Id)
+                .Paginar(paginacionDTO).ToListAsync();
 
             return mapper.Map<List<ComentarioDTO>>(comentarios);
         }

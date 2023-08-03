@@ -33,7 +33,9 @@ using System.IdentityModel.Tokens.Jwt;
 using WebAPIAutores.Servicios;
 using WebAPIAutores.Utilidades;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
+using System.Reflection;
 
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 namespace WebApiAutores
 {
     public class Startup
@@ -71,7 +73,21 @@ namespace WebApiAutores
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebAPIAutores", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { 
+                    Title = "WebAPIAutores", 
+                    Version = "v1",
+                    Description = "Este es un web api para trabajar con autores y libros",
+                    Contact = new OpenApiContact
+                    {
+                        Email = "example@hotmail.com",
+                        Name = "Emanuel Paredes",
+                        Url = new Uri("https://coffeetraducciones.wixsite.com/coffeetraducciones")
+                    },
+                    License = new OpenApiLicense
+                    {
+                        Name = "MIT"
+                    }
+                });
                 c.SwaggerDoc("v2", new OpenApiInfo { Title = "WebAPIAutores", Version = "v2" });
                 c.OperationFilter<AgregarParametroHATEOAS>();
                 c.OperationFilter<AgregarParametroXVersion>();
@@ -99,6 +115,10 @@ namespace WebApiAutores
                         new string[]{}
                     }
                 });
+
+                var archivoXML = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var rutaXML = Path.Combine(AppContext.BaseDirectory, archivoXML);
+                c.IncludeXmlComments(rutaXML);
             });
 
             services.AddAutoMapper(typeof(Startup));
@@ -119,7 +139,8 @@ namespace WebApiAutores
             {
                 opciones.AddDefaultPolicy(builder =>
                 {
-                    builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader();
+                    builder.WithOrigins("https://apirequest.io").AllowAnyMethod().AllowAnyHeader()
+                        .WithExposedHeaders(new string[] { "cantidadTotalRegistros" });
                 });
             });
 
