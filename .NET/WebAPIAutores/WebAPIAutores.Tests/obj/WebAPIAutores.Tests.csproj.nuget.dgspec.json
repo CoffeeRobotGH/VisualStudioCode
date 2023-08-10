@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj": {}
+    "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
+    "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
+        "projectUniqueName": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
         "projectName": "WebAPIAutores",
-        "projectPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
+        "projectPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
         "packagesPath": "C:\\Users\\CoffeeRobot\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\obj\\",
+        "outputPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CoffeeRobot\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[12.0.1, )"
             },
+            "MSTest.TestAdapter": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
+            "MSTest.TestFramework": {
+              "target": "Package",
+              "version": "[2.2.8, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.19, )"
@@ -71,6 +79,14 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[7.0.7, )"
+            },
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[17.1.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.2, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
@@ -104,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj": {
+    "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj",
+        "projectUniqueName": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj",
         "projectName": "WebAPIAutores.Tests",
-        "projectPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj",
+        "projectPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\WebAPIAutores.Tests.csproj",
         "packagesPath": "C:\\Users\\CoffeeRobot\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\obj\\",
+        "outputPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CoffeeRobot\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -128,8 +144,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
-                "projectPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj"
+              "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
+                "projectPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj"
               }
             }
           }
@@ -156,6 +172,10 @@
               "target": "Package",
               "version": "[17.1.0, )"
             },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.20.2, )"
+            },
             "coverlet.collector": {
               "target": "Package",
               "version": "[3.1.2, )"
@@ -173,6 +193,9 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
