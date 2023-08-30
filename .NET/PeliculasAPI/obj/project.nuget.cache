@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FIPg+gJOEkYYD9ILtX9dJCUh2BGhqhQDKCmXNpa8fllAUa5O80+oHo7MBMHu6jdW/0oFAlM7LdedGBtEQaDozA==",
+  "dgSpecHash": "oAWtCyxnbOFbqLAlOk8WkJSHCTeNyJHDrKSfjz8Dw/XRstMtQR7Is+edfLBSbrmpJ3HNldAIBp2gntKiMGoYvg==",
   "success": true,
-  "projectFilePath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
+  "projectFilePath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

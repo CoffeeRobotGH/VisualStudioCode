@@ -4002,11 +4002,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
+      "projectUniqueName": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
       "projectName": "PeliculasAPI",
-      "projectPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
+      "projectPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\PeliculasAPI.csproj",
       "packagesPath": "C:\\Users\\CoffeeRobot\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\obj\\",
+      "outputPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\PeliculasAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\CoffeeRobot\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4016,6 +4016,7 @@
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
