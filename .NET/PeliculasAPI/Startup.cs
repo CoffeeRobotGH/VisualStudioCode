@@ -19,7 +19,7 @@ using Microsoft.Extensions.Logging;
 // using NetTopologySuite;
 // using NetTopologySuite.Geometries;
 using PeliculasAPI.Helpers;
-// using PeliculasAPI.Servicios;
+using PeliculasAPI.Servicios;
 
 namespace PeliculasAPI
 {
@@ -37,7 +37,7 @@ namespace PeliculasAPI
         {
             services.AddAutoMapper(typeof(Startup));
 
-            // services.AddTransient<IAlmacenadorArchivos, AlmacenadorArchivosAzure>();
+            services.AddTransient<IAlmacenadorArchivos, AlmacenadorDeArchivosLocal>();
             services.AddHttpContextAccessor();
 
             // services.AddSingleton<GeometryFactory>(NtsGeometryServices.Instance.CreateGeometryFactory(srid: 4326));
@@ -58,8 +58,8 @@ namespace PeliculasAPI
             // sqlServerOptions => sqlServerOptions.UseNetTopologySuite()
             ));
 
-            services.AddControllers();
-            //     .AddNewtonsoftJson();
+            services.AddControllers()
+                .AddNewtonsoftJson();
 
             // services.AddIdentity<IdentityUser, IdentityRole>()
             //   .AddEntityFrameworkStores<ApplicationDbContext>()
