@@ -87,3 +87,8 @@ C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microso
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\System.Linq.Dynamic.Core.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.NetTopologySuite.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\NetTopologySuite.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
