@@ -48,7 +48,7 @@ namespace PeliculasAPI.Controllers
         {
             var ubicacionUsuario = geometryFactory.CreatePoint(new Coordinate(filtro.Longitud, filtro.Latitud));
 
-            var salasDeCine = await context.SalaDeCine
+            var salasDeCine = await context.SalasDeCine
                 .OrderBy(x => x.Ubicacion.Distance(ubicacionUsuario))
                 .Where(x => x.Ubicacion.IsWithinDistance(ubicacionUsuario, filtro.DistanciaEnKms * 1000))
                 .Select(x => new SalaDeCineCercanoDTO

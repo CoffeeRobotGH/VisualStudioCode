@@ -92,3 +92,9 @@ C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microso
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\NetTopologySuite.dll
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\NetTopologySuite.IO.SqlServerBytes.dll
 C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\obj\Debug\net6.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\CoffeeRobot\Documents\VSCode\.NET\PeliculasAPI\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

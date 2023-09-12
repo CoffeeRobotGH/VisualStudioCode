@@ -25,7 +25,7 @@ namespace PeliculasAPI.Helpers
             // CreateMap<ReviewDTO, Review>();
             // CreateMap<ReviewCreacionDTO, Review>();
 
-            // CreateMap<IdentityUser, UsuarioDTO>();
+            CreateMap<IdentityUser, UsuarioDTO>();
 
             CreateMap<SalaDeCine, SalaDeCineDTO>()
                 .ForMember(x => x.Latitud, x => x.MapFrom(y => y.Ubicacion.Y))
