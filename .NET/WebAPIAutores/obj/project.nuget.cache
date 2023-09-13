@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JWYXAcC/jDEpx8KV085qB1bsNTshn/rTG5NE7JUVdB2nhsQ0RyK9fvXTs+kH/RUXcUUwlhfIhU34hc7ibRXKdA==",
+  "dgSpecHash": "hcLqCkdF+YMSe/mex3SdWgVre5VyrwwN4kgVI5biDSYlUZwdumMohh2wCfSJnZdHN2eQ9qAM+m8zt4sHy6VFjQ==",
   "success": true,
-  "projectFilePath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
+  "projectFilePath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

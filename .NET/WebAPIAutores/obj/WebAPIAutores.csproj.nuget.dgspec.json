@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {}
+    "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {}
   },
   "projects": {
-    "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
+    "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
+        "projectUniqueName": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
         "projectName": "WebAPIAutores",
-        "projectPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
+        "projectPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
         "packagesPath": "C:\\Users\\CoffeeRobot\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\obj\\",
+        "outputPath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\CoffeeRobot\\AppData\\Roaming\\NuGet\\NuGet.Config",

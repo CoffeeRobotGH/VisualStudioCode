@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPIAutores</name>
+    </assembly>
+    <members>
+        <member name="M:WebAPIAutores.Controllers.V1.AutoresController.Delete(System.Int32)">
+            <summary>
+            Borra un autor
+            </summary>
+            <param name="id">Id del autor a borrar</param>
+            <returns></returns>
+        </member>
+        <member name="T:WebAPIAutores.Migrations.Inicial">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Inicial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Inicial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Inicial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebAPIAutores.Migrations.Comentarios">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Comentarios.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Comentarios.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.Comentarios.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebAPIAutores.Migrations.AutoresLibros">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.AutoresLibros.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.AutoresLibros.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.AutoresLibros.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebAPIAutores.Migrations.FechaPublicacionLibro">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.FechaPublicacionLibro.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.FechaPublicacionLibro.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.FechaPublicacionLibro.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebAPIAutores.Migrations.SistemaUsuario">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.SistemaUsuario.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.SistemaUsuario.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.SistemaUsuario.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:WebAPIAutores.Migrations.ComentarioUsuario">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.ComentarioUsuario.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.ComentarioUsuario.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:WebAPIAutores.Migrations.ComentarioUsuario.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
