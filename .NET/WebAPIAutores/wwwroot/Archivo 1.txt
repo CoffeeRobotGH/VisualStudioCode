@@ -1,0 +1,6 @@
+Proceso iniciado
+Proceso en ejecución: 30/06/2023 11:39:24
+Proceso en ejecución: 30/06/2023 11:39:29
+Proceso en ejecución: 30/06/2023 11:39:34
+Proceso en ejecución: 30/06/2023 11:39:39
+Proceso finalizado
