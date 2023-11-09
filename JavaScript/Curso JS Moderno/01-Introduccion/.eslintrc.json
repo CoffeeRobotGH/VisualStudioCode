@@ -1,0 +1,15 @@
+/*
+    En la Terminal
+
+    eslint .\js\app.js 
+    eslint .\js\app.js --fix
+*/
+
+{
+    "parserOptions": {
+        "ecmaVersion": 6
+    },
+    "rules": {
+        "semi": ["error", "always"]
+    }
+}
