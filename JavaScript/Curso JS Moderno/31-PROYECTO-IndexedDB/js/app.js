@@ -293,8 +293,6 @@ function eliminarCita(id) {
     transaction.onerror = () => {
         conosole.log('Hubo un error');
     }
-
-    ui.imprimirCitas();
     
     reiniciarObjeto();
 
