@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "J4Rs7czZLRuwvSVGBL+mSNcwSDEcWRyhR13q/t0mZqYTY08G51cFBX8pY5zfAtt61GMj0zYa3ubDYaCOIkd2Ww==",
+  "dgSpecHash": "2zorGdiA2RLZzxwCikZuAksdGNAvFUOY4V6VOblmf0iPC3ASIYx7qrsRjkrWIqwuVPs7i+Oq1zTtr/eP2SORiw==",
   "success": true,
   "projectFilePath": "C:\\Users\\CoffeeRobot\\Documents\\VSCode\\.NET\\WebAPIAutores\\WebAPIAutores.csproj",
   "expectedPackageFiles": [
@@ -80,7 +80,11 @@
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\system.text.json\\7.0.0\\system.text.json.7.0.0.nupkg.sha512",
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
     "C:\\Users\\CoffeeRobot\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
-    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512",
+    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\CoffeeRobot\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.26\\microsoft.netcore.app.host.win-x64.6.0.26.nupkg.sha512"
   ],
   "logs": []
 }
