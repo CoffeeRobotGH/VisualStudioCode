@@ -1,17 +1,24 @@
-// Organizar código
+// Module Pattern
 
-// Module, Probablemente el más popular de todos, ya lo hemos utilizado...
+// const mostrarCliente = nombre => {
+	// console.log(nombre);
+// }
+// export default mostrarCliente;
 
-// Su Sintaxis era un poco diferente antes, ahora ya tenemos modules en JavaScript por lo tanto ya se siente como una solución más natural, ya que antes parecia algo muy sacado de la manga...
-
-
-const mostrarCliente = nombre => {
-    console.log(nombre);
-}
-
-export default mostrarCliente
-
-
-var module1 = (function() {
-
+const modulo1 = (function() {
+	const nombre = 'Emanuel';
+	
+	fucntion hola() {
+		console.log('hola');
+	}
+	
+	return {
+		nombre,
+		hola
+	}
 })();
+
+// En otro archivo
+console.log(modulo1.nombre);
+
+modulo.hola();

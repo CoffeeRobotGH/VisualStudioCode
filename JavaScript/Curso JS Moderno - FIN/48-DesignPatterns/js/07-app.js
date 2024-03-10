@@ -1,12 +1,6 @@
+const restaurantApp = {};
 
-// Namespaces es un design pattern de organización de código, ayuda a evitar colision con nombres en el scope global de javascript.
-
-// la idea del namespace es crear un objeto global alrededor de tu aplicación y agregar todas las funciones dentro en lugar de crear múltiples funciones y objetos que se puedan acceder de forma global.
-
-
-const restaurApp = {};
-
-restaurApp.platillos = [
+restaurantApp.platillos = [
     {
         platillo: 'Pizza',
         precio: 25
@@ -21,28 +15,33 @@ restaurApp.platillos = [
     }
 ];
 
-restaurApp.funciones = {
-    ordenar: id => {
-        console.log(`Tu platillo: ${restaurApp.platillos[id].platillo} se esta preparando`);
-    },
-    agregarPlatillo: (platillo, precio) => {
-        const nuevo = {
-            platillo,
-            precio
-        }
-        restaurApp.platillos.push(nuevo);
-    },
-    mostrarMenu: platillos => {
-        console.log(`Bienvenidos a nuestro Menú:`)
-        platillos.forEach((platillo, index) => {
-            console.log(`${index})  ${platillo.platillo} $ ${platillo.precio}`)
-        });
-    }
+restaurantApp.funciones = {
+	mostrarMenu: () => {
+		console.log(`Bienvenidos a nuestro menú`);
+		
+		platillos.forEach((platillo, index) => {
+			console.log(`${index} : ${platillo.platillo} $${platillo.precio}`)
+		})
+	},
+	
+	ordenar: id => {
+		console.log(`Tu Platillo: ${restaurantApp.platillos[id].platillo} se esta preparando`)
+	},
+	
+	agregarPlatillo: (platillo, precio) => {
+		const nuevo = {
+			platillo,
+			precio
+		};
+		
+		restaurantApp.platillos.push(nuevo);
+	}
 }
 
-restaurApp.funciones.agregarPlatillo('Pastel', 20);
-// console.log(restaurApp );
-const { platillos} = restaurApp;
+restaurantApp.funciones.ordenar(1);
 
-restaurApp.funciones.mostrarMenu(platillos);
-restaurApp.funciones.ordenar(1);
+restaurantApp.funciones.agregarPlatillo('Taco', 20);
+
+const { platillos } = restaurantApp;
+
+restaurantApp.funciones.mostrarMenu( platillos );
